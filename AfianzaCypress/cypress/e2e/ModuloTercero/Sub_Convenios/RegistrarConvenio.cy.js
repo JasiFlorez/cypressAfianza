@@ -9,6 +9,7 @@ export const RegistrarConvenio = () => {
   cy.get("[name = 'legalInformation.nit']").click().type("1043660333")
   cy.get("[name = 'legalInformation.bussinesName']").click().type("TestingPrueba")
   cy.get("[name = 'legalInformation.invoicingName']").click().type("TestingTS")
+
   cy.get("[name = 'legalInformation.legalRepresentative']").click().type("TestingJS")
   cy.get("[name = 'legalInformation.issueDate']").type("2024-01-13")
   cy.get("[name = 'legalInformation.dateConstitution']").type("2030-01-13")
@@ -17,6 +18,8 @@ export const RegistrarConvenio = () => {
   cy.get('#mui-4').click()
   cy.get('#mui-4-option-0').contains("SI").click()
   
+  cy.wait(2000);
+
   cy.get(':nth-child(3) > .sc-djTcra').contains("INFORMACIÓN DE RESIDENCIA Y CONTACTO")
   
   cy.get('#mui-6').type("ATLANTICO").click()
@@ -33,7 +36,7 @@ export const RegistrarConvenio = () => {
   
   cy.get('#mui-13').click()
   cy.get('#mui-13-option-8').contains("CALLE").click()
-  
+
   cy.get("[name ='address.secondStreetNumber']").click().type("52")
   cy.get("[name ='address.thirdStreetNumber']").click().type("102")
   cy.get("[name ='address.description']").click().type("CASA ROJA CON BLANCO")
@@ -47,6 +50,8 @@ export const RegistrarConvenio = () => {
   cy.get('#mui-17').type("1811  ACTIVIDADES DE IMPRESIÓN").click()
   cy.get('#mui-17-option-0').contains("ACTIVIDADES DE IMPRESIÓN").click()
   
+  cy.wait(2000);
+
   cy.get("[name ='taxInfo.FATCAobservation']").click().type("1043660366")
   cy.get("[name ='taxInfo.originOfFundsObservation']").click().type("TestingKing")
   cy.get("[name ='taxInfo.SARLAFTObservation']").click().type("PruebaQA")
@@ -60,7 +65,7 @@ export const RegistrarConvenio = () => {
   
   cy.get('#mui-23').click()
   cy.get('#mui-23-option-0').contains("SI").click()
-  
+
   cy.get('#mui-25').click()
   cy.get('#mui-25-option-0').contains("SI").click()
   
@@ -72,15 +77,16 @@ export const RegistrarConvenio = () => {
   
   cy.get("[name ='taxInfo.serviceDescription']").click().type("PruebaDelTesting")
   
-  
+  cy.wait(2000);
+    
   cy.get("[name ='detailBank.accountNumber']").click().type("GB33BUKB20201555555555")
   
-  cy.get('#mui-31').click()
+  cy.get('#mui-31').type("CUENTA CORRIENTE").click()
   cy.get('#mui-31-option-0').contains("CUENTA CORRIENTE").click()
   
   cy.get('#mui-33').type("BANCOLOMBIA S.A.").click()
   cy.get('#mui-33-option-0').contains("BANCOLOMBIA S.A.").click()
-  
+
   cy.get("[name ='financialInfo.monthlyIncome']").click().type("2000000")
   cy.get("[name ='financialInfo.incomeLevel']").click().type("3")
   cy.get("[name ='financialInfo.monthlyExpense']").click().type("600000")
@@ -93,5 +99,9 @@ export const RegistrarConvenio = () => {
   cy.get('#mui-35-option-0').contains("PAGO TOTAL").click()
   
   const filePath = 'testing.pdf'
+  const camaraCormercio = 'prueba.png'
+  const estadosFinacieros = 'librofavorito.pdf'
   cy.get("[name ='rut']").attachFile(filePath)
+  cy.get("[name ='camaraDeComercio']").attachFile(camaraCormercio)
+  cy.get("[name ='estadosFinancieros']").attachFile(estadosFinacieros)
 };
