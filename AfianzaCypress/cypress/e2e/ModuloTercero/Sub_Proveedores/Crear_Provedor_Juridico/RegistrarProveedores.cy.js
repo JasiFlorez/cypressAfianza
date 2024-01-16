@@ -5,7 +5,7 @@ export const RegistrarProveedores = () => {
             cy.get(".MuiCollapse-entered > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(2) > #panel1bh-header > .MuiAccordionSummary-content > .MuiTypography-root").click();
             cy.get('[href="/proveedores/register"] > .sc-bjCGfv > .MuiTypography-root').click();
             
-            //Apartado INFORMACIÓN BÁSICA
+            //APARTADO DE INFORMACIÓN BÁSICA
             cy.get('[name ="legalInformation.nit"]').click().type("10433660311")
             cy.get('[name ="legalInformation.bussinesName"]').click().type("TestingPrueba")
             cy.get('[name ="legalInformation.legalRepresentative"]').click().type("QA")
@@ -17,7 +17,7 @@ export const RegistrarProveedores = () => {
             cy.get('#mui-4').click().type("SI")
             cy.get('#mui-4-option-0').contains("SI").click()
             
-            //Apartado ASOCIADO
+            //APARTADO DE ASOCIADO
             cy.get('#mui-6').click().type("SI")
             cy.get('#mui-6-option-0').contains("SI").click()
             cy.get('[name ="thirdPartyAssociate.issueDate"]').type("2021-01-13")
@@ -28,7 +28,7 @@ export const RegistrarProveedores = () => {
             
             cy.get('[name ="thirdPartyAssociate.assemblyDate"]').type("2022-01-13")
             
-            //INFORMACIÓN DE RESIDENCIA Y CONTACTO
+            //APARTADO DE INFORMACIÓN DE RESIDENCIA Y CONTACTO
             cy.get('#mui-10').click().type("ATLANTICO")
             cy.get('#mui-10-option-0').contains("ATLANTICO").click()
             
@@ -52,7 +52,7 @@ export const RegistrarProveedores = () => {
             cy.get('[name ="contact.telePhone"]').type("3206536744")
             cy.get('[name ="contact.email"]').type("testing@gmail.com")
             
-            //INFORMACIÓN TRIBUTARIA
+            //APARTADO DE INFORMACIÓN TRIBUTARIA
             
             cy.get('#mui-19').click().type("RESPONSABLE DE IVA")
             cy.get('#mui-19-option-0').contains("RESPONSABLE DE IVA").click()
@@ -87,7 +87,7 @@ export const RegistrarProveedores = () => {
             
             cy.get('[name ="taxInfo.serviceDescription"]').type("Testing Responsable")
             
-            //INFORMACIÓN BANCARIA Y FINANCIERA
+            //APARTADO DE INFORMACIÓN BANCARIA Y FINANCIERA
             cy.get('[name ="detailBank.accountNumber"]').type("332020155555555")
             
             cy.get('#mui-35').click().type("CUENTA CORRIENTE")
@@ -103,7 +103,7 @@ export const RegistrarProveedores = () => {
             cy.get('[name ="financialInfo.passives"]').type("200000")
             cy.get('[name ="financialInfo.otherIncome"]').type("300000")
 
-            //CARGA DE DOCUMENTO
+            //APARTADO DE CARGA DE DOCUMENTO
             const document = 'prueba22.pdf'
             cy.get('[name ="rut"]').attachFile(document)
         }
