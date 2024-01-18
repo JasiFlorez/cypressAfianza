@@ -85,6 +85,19 @@ export const registrarProveedores = ()=>{
     cy.get("[name ='personalInfo.email']").click().type("FundacionTestingDevolep@gmail.com")
     
     //Apartado de REFERENCIAS
+    cy.get("[name ='contacts.0.name']").click().type("FundacionTesting")
+    cy.get("[name ='contacts.0.middleName']").click().type("Devolep")
+    cy.get("[name ='contacts.0.lastName']").click().type("Qa")
+    cy.get("[name ='contacts.0.secondLastName']").click().type("Qa")
     
+    
+    cy.get('#mui-33').click().type("AMIGO")
+    cy.get('#mui-33-option-0').contains("AMIGO").click()
+    
+    cy.get("[name ='contacts.0.phone']").click().type("3206586987")
+    cy.get("[name ='contacts.0.telePhone']").click().type("3145582142")
+    cy.get("[name ='contacts.0.email']").click().type("Testing@hotmail.com")
+
+    //INFORMACIÓN LABORAL
     
 }
